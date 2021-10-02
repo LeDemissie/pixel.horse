@@ -5,7 +5,9 @@ services:
     container_name: metro-town-app
     build: .
     ports:
-      - 8081:80
+      - 8080:8080
+      - 8081:8081
+      - 8091:8091
     depends_on:
       - mongo
   mongo:
@@ -15,5 +17,3 @@ services:
       - 27017:27017
     environment:
       MONGO_INITDB_DATABASE: pony_db
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: admin
